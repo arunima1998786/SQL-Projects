@@ -138,12 +138,22 @@ GROUP BY b.book_id;
 SELECT * FROM books
 ORDER BY stock ASC
 LIMIT 1;
-21.
-  --Most Expensive Book
+
+21.--Most Expensive Book
 SELECT *
 FROM books
 ORDER BY price DESC
 LIMIT 1;
+
+22.--Repeated Customers
+SELECT c.customer_id, c.name, COUNT(o.order_id) AS order_count
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.name
+HAVING COUNT(o.order_id) >= 2
+ORDER BY order_count DESC
+LIMIT 5;
 
 
 

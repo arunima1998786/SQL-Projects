@@ -9,7 +9,7 @@ The objective of this project is to understand sales performance, customer behav
 
 ## Tools Used
 - PostgreSQL
-- SQL
+
 
 ---
 
